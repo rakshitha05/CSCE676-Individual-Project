@@ -1,13 +1,51 @@
-# Ignore datasets / large files
-data/
+# =========================
+# Data (do not upload raw data)
+# =========================
+data/*
+!data/README.md
 
-# Python cache / artifacts
+# =========================
+# Python
+# =========================
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# Jupyter artifacts
+# =========================
+# Jupyter Notebook
+# =========================
 .ipynb_checkpoints/
 
-# OS clutter
+# =========================
+# Virtual environments
+# =========================
+.venv/
+venv/
+env/
+
+# =========================
+# OS files
+# =========================
 .DS_Store
 Thumbs.db
+
+# =========================
+# Logs and temp files
+# =========================
+*.log
+*.tmp
+
+# =========================
+# Large unnecessary files
+# =========================
+*.zip
+*.tar
+*.gz
+*.h5
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/

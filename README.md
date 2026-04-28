@@ -1,122 +1,58 @@
-# CSCE676 — Individual Project  
-## Graph Mining & Embeddings Project
+# Do Graph Embeddings Preserve Structural Roles?
 
-**Author:** Rakshitha Gurudatt Kagal  
-**UIN:** 337002110  
-**Course:** CSCE 676 — Data Mining & Analysis  
-**Checkpoint:** Dataset Selection, Dataset Comparison, & Exploratory Data Analysis
+Graph embeddings are widely used in applications such as social networks, recommendation systems, and fraud detection. These methods compress complex graph structures into low-dimensional representations, but it is unclear whether they preserve meaningful structural information. This project investigates whether embeddings retain important node roles such as hubs, bridges, and peripheral nodes, and shows that commonly used methods may lose this information.
 
----
+👉 The main deliverable is: main_notebook.ipynb
 
-## 📌 Project Overview
+## Research Questions
+- To what extent do graph embeddings preserve structurally distinct node roles?
+- Do embeddings capture global structure or only local similarity?
+- How do spectral embedding and node2vec compare?
 
-This project analyzes a real-world social network graph using classical data
-mining techniques and modern representation learning methods. The objective is
-to explore structural properties of graph data, identify meaningful patterns,
-and evaluate how embeddings capture network behavior.
+🎥 Project Video: https://youtu.be/UYNXRPLKY-w
 
-The selected dataset is the **SNAP Facebook Combined Graph**, a widely used
-benchmark dataset for graph mining research.
+## Data
+SNAP Facebook Combined Graph  
+https://snap.stanford.edu/data/facebook_combined.html  
 
----
+## How to Reproduce
+1. git clone <repo>
+2. pip install -r requirements.txt
+3. Run main_notebook.ipynb
 
-## 📊 Dataset
+## Key Dependencies
+Python 3.12.13, numpy, pandas, networkx, matplotlib, scipy, scikit-learn, node2vec, gensim
 
-**Source:** Stanford Network Analysis Project (SNAP)  
-**Dataset:** Facebook Combined Graph  
+## Repo Structure
+.
+├── README.md
+├── main_notebook.ipynb
+├── requirements.txt
+├── .gitignore
+│
+├── assets/
+│   ├── README.md
+│   ├── embedding_comparison.png
+│   ├── spectral_embedding.png
+│   ├── node2vec_embedding.png
+│   ├── role_distribution.png
+│   ├── results_table.png
+│   └── final_presentation.pptx
+│
+├── data/
+│   └── README.md
+│
+├── scripts/
+│   ├── README.md
+│   ├── download_data.py
+│   ├── utils.py          (optional)
+│   └── visualization.py  (optional)
+│
+├── checkpoints/
+│   ├── README.md
+│   ├── checkpoint_1.ipynb
+│   └── checkpoint_2.ipynb
 
-- **Nodes:** 4039  
-- **Edges:** 88,234  
-- **Graph Type:** Undirected  
-- **Node Attributes:** None (structural analysis)
-
-Dataset link:  
-https://snap.stanford.edu/data/facebook_combined.txt.gz
-
----
-
-## 🎯 Objectives
-
-This checkpoint focuses on:
-
-✔ Dataset selection and justification  
-✔ Data cleaning and preprocessing  
-✔ Exploratory Data Analysis (EDA)  
-✔ Bias and ethical considerations  
-✔ Establishing a foundation for advanced techniques  
-
----
-
-## 🔎 Techniques Applied
-
-### Course-Aligned Methods
-
-- Graph Construction & Cleaning  
-- Graph Summary Statistics  
-- Degree Distribution Analysis  
-- Centrality Measures  
-- Community Detection  
-
-### Beyond-Core Exploration
-
-- Spectral Graph Embeddings  
-- PCA Visualization of Embeddings  
-
----
-
-## 🧹 Data Cleaning Decisions
-
-The following preprocessing steps were applied:
-
-- Removed self-loops  
-- Removed duplicate edges  
-- Canonicalized undirected edges  
-- Loaded node IDs as strings  
-
-**Why this matters:**  
-Graph metrics are highly sensitive to structural artifacts. Proper cleaning
-ensures correctness and prevents distortion of degree, centrality, and
-clustering measures.
-
----
-
-## 📈 Key Findings
-
-- The network is sparse but fully connected  
-- Degree distribution is highly skewed  
-- Hub nodes dominate centrality rankings  
-- Community sizes are uneven  
-- Embeddings capture structural variation  
-
----
-
-## ⚠ Bias & Limitations
-
-This dataset reflects sampling decisions during collection. Observed structural
-patterns may not fully generalize to all social networks. Additionally, the
-absence of node attributes limits semantic interpretation.
-
----
-
-## 🧭 Future Directions
-
-Potential extensions include:
-
-- Similarity search via LSH  
-- Link prediction experiments  
-- Node classification (if attributes available)  
-- Graph neural network methods  
-
----
-
-## ▶ Reproducibility
-
-The notebook automatically downloads the dataset from SNAP when needed.
-
-To run locally:
-
-```bash
-pip install pandas numpy networkx matplotlib scipy scikit-learn
-jupyter notebook
-
-
+## Results Summary
+Spectral embedding preserves structural roles significantly better than node2vec.  
+Local similarity is not the same as structural role.
