@@ -45,8 +45,8 @@ Python 3.12.13, numpy, pandas, networkx, matplotlib, scipy, scikit-learn, node2v
 ├── scripts/
 │   ├── README.md
 │   ├── download_data.py
-│   ├── utils.py          (optional)
-│   └── visualization.py  (optional)
+│   ├── utils.py
+│   └── visualization.py
 │
 ├── checkpoints/
 │   ├── README.md
