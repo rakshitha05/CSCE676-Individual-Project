@@ -23,7 +23,9 @@ https://snap.stanford.edu/data/facebook_combined.html
 ## Key Dependencies
 Python 3.12.13, numpy, pandas, networkx, matplotlib, scipy, scikit-learn, node2vec, gensim
 
-## Repo Structure
+## Repository Structure
+
+```text
 .
 ├── README.md
 ├── main_notebook.ipynb
@@ -52,6 +54,7 @@ Python 3.12.13, numpy, pandas, networkx, matplotlib, scipy, scikit-learn, node2v
 │   ├── README.md
 │   ├── checkpoint_1.ipynb
 │   └── checkpoint_2.ipynb
+```
 
 ## Results Summary
 Spectral embedding preserves structural roles significantly better than node2vec.  
